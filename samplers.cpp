@@ -31,7 +31,7 @@ void AudioCallback(AudioHandle::InterleavingInputBuffer in, AudioHandle::Interle
     // kfakfjghsjdfg
     for(size_t i = 0; i < size; i += 2)
     {
-        // stream sampelrs
+        // stream samplers
         samp_out  = s162f(p1.Stream());
         samp_out += s162f(p2.Stream());
 
@@ -50,7 +50,8 @@ int main(void)
     // initialize SD card
     SdmmcHandler::Config sd_cfg;
     sd_cfg.Defaults();
-    // sd_cfg.speed = SdmmcHandler::Speed::FAST;
+    sd_cfg.speed = SdmmcHandler::Speed::VERY_FAST;
+
     sdcard.Init(sd_cfg);
     fsi.Init(FatFSInterface::Config::MEDIA_SD);
 
